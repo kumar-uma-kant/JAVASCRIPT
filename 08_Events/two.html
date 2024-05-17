@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Smart Learning</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    // +++++++++++++  setTimeout() ++++++++++++++++++++++++++++=
+
+    // syntax: setTimeout(function, milliseconds, param1, param2, ...)
+
+    // setTimeout(function () {
+    //   console.log("Umakant Kumar");
+    // }, 2000); // means ki after waiting '2' second console will print ar ak bar hi print krega baar baar nhi krega
+    /* 
+
+    const sayUma = function () {
+      console.log("Umakant Kumar");
+    };
+    const changeText = function () {
+      document.querySelector("h1").innerHTML = "best JS series"; // esse kya hoga ki jo hamara 'h1' tag me content hai usko hm "best JS series" se change kr denge
+    };
+    setTimeout(changeText, 2000); // means changeText me jo kuch v hai usko 2 second wait krne k baad 'h1' tag ko editing krega
+
+    //Note:- Esko clear krne k liy hm  clearTimeout() use krte hai 
+    
+    const changeMe = setTimeout(changeText, 2000);
+    clearTimeout(changeMe); // esse 'clearTimeout' hm "setTimeout" pe lga rahe hai
+*/
+    // ...... applying on EventListener............
+
+    // const sayUma = function () {
+    //   console.log("Umakant Kumar");
+    // };
+    // const changeText = function () {
+    //   document.querySelector("h1").innerHTML = "best JS series"; // esse kya hoga ki jo hamara 'h1' tag me content hai usko hm "best JS series" se change kr denge
+    // };
+    // setTimeout(changeText, 2000); // means changeText me jo kuch v hai usko 2 second wait krne k baad 'h1' tag ko editing krega
+    // const changeMe = setTimeout(changeText, 2000);
+    // document.querySelector("#stop").addEventListener("click", function () {
+    //   clearTimeout(changeMe);
+    //   console.log("STOPPED"); // esse stop pe press krne pe event ko hone se ruk jayegi
+    // });
+
+    // clearTimeout ko always ak reference chahiy hota hai ki kis 'setTimeout' wale ko clear krna hai
+  </script>
+</html>

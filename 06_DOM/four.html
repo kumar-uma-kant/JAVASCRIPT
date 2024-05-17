@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session on DOM</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    // values are going to add
+    function addLanguage(langName) {
+      // "langName" is a parameter of the function
+      const li = document.createElement("li"); //here 'li'item as a element created
+      li.innerHTML = `${langName}`; // here 'li'ke inside "langName" ko add kr rahe hai ".innerHTML" ke through
+      document.querySelector(".language").appendChild(li); // attaching done here [means 'querySelector' jaha v language name ki class hoga usme jakar 'li'element jo create kiy hai usko add kr dega ]
+    }
+    addLanguage("python"); // python as a parameter passed here
+    addLanguage("typescript");
+    addLanguage("react");
+
+    //.......... same things done with optimisation .....
+
+    function addOptiLanguage(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    addOptiLanguage("golang"); // want to add 'golang'as a parameter
+
+    // Note: using "appendChild" instead of ".innerHTML" is good practice
+
+    //......................................................
+    //+++++ concept of "Edit" +++++++++
+
+    const secondLang = document.querySelector("li:nth-child(3)"); // here 3 means editing to child no 3
+    console.log(secondLang);
+    //secondLang.innerHTML = "Mojo" // ".innerHTML" used for adding
+    const newli = document.createElement("li");
+    newli.textContent = "Mojo"; // ".textcontent" used for adding purpose
+    secondLang.replaceWith(newli); // here means that 'secondLang' ko replace/edit kr rahe hai by "newli" se
+
+    //edit ..using ".outerHTML".....
+
+    const firstLang = document.querySelector("li:first-child"); // here first value will be changed
+    firstLang.outerHTML = "<li>TypeScript</li>"; // ess first child jo 'javascricpt' tha usko ab "TypeScript" se edit kr dega
+    //......................................................
+
+    //+++++++++ concept of 'Removing' +++++++++++++++++
+    const lastLang = document.querySelector("li:last-child"); // means here ki querrySelector ko laSt line de do
+    lastLang.remove(); // using '.removre()'method
+  </script>
+</html>

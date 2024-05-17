@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Closure</title>
+  </head>
+  <body style="background-color: #313131">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+
+  <script>
+    // function init() {       // function created
+    //     let name = "Mozilla";
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     displayName();
+    // }
+    // init();
+
+    // ................ concept of "Lexical scope" .....
+
+    // kisi v function ka scope tb tak rahta hai jb tak ki execution hoti rahti hai
+
+    function outer() {
+      let username = "umakant";
+      //   console.log("OUTER", secret);  // means ki outer wala function inner wala se koi v element ko access nhi kr sakta hai ....
+    //   // but inner wale function outer wale function k elements ko access kr sakte hai
+    //   function inner() {
+    //     let secret = "my123";
+    //     console.log("inner", username);
+    //   }
+    //   function innerTwo() {
+    //     console.log("innerTwo", username);
+    //     console.log(secret);
+    //   }
+    //   inner();
+    //   innerTwo();
+    // }
+    // outer();
+    // console.log("TOO OUTER", username);
+
+    //...................... concept of "closure".............
+
+    // function makeFunc() {
+    //   const name = "Mozilla";
+    //   function displayName() {
+    //     console.log(name);
+    //   }
+    //   return displayName;
+    //   // yaha pe sirf displayname return nhi hoga balki sath me agar outer function exist krta hai toh uska v pura scope jayega q ki  'Lexical scope' ki wajah se hi jata hai
+    // }
+
+    // const myFunc = makeFunc();
+    // myFunc();
+  </script>
+
+  <script>
+    // ............ application of above topic........
+    // method 1:
+    // document.getElementById("orange").onclick = function () {
+    //   document.body.style.backgroundColor = `orange`;
+    };
+    // document.getElementById("green").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+
+    //NOTE: agar hme 500 color de koi tb hme 500 times code ko krna hoga so to resolve this issue ..move to method2 👇
+
+    // method2.
+
+    function clickHandler(color) {
+      // document.body.style.backgroundColor = `${color}`// esse direct execute ho jayega so not good ..to resolve this issue maked a function as done below 👇
+
+      return function () {
+        document.body.style.backgroundColor = `${color}`;
+      };
+    }
+    // yaha pr lexical scope ka concept use ho raha hai
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+  </script>
+</html>

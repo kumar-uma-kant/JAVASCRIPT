@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Cracking</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thursday</div>
+    </div>
+  </body>
+  <script>
+    const parent = document.querySelector(".parent");
+    console.log(parent); // esse 'parent' ki andar ki sari value milti hai
+    // //  Note:  "parent.children" hme 'HTMLCollection' ko deta hai
+    // console.log(parent.children); // esse parent k andar kitne children mile hai usko pata krte hai..(Monday, tues.......Thursday)
+    // console.log(parent.children[0]); // esse aap children ki first element ko access kr sakte hai
+    // console.log(parent.children[0].innerHTML); // esse first element ki andaer ki value ko access krte hai
+
+    for (let i = 0; i < parent.children.length; i++) {
+      console.log(parent.children[i].innerHTML);
+    }
+    // yaha pe children.length nhi liy h q ki "children.length" yah Html collection return krta hai ..jispe hm for loop nhi laga sakte hai
+
+    // ............ way to change the styling on .......'children'
+    parent.children[0].style.color = "orange";
+    parent.children[1].style.color = "yellow";
+    parent.children[2].style.color = "green";
+    parent.children[3].style.color = "pink";
+
+    // .......... way to move 'parent' to 'child' .......
+
+    // .......... way to move 'child' to 'Parent' ......
+
+    // const dayOne = document.querySelector(".day"); // (.querySelector) se jo pahle aayega ussi ko access kr lega
+    // console.log(dayOne); // pahle monday hai esliy pahle print hoga
+    // console.log(dayOne.parentElement); //esse aap 'child' to 'Parent' move kr lenge...means pura parent ka content print ho jayega
+    // console.log(dayOne.nextElementSibling); // esse aap next element ya siblings ko access kr lega .. means next element monday k baad Tuesday siblings print hoga
+
+    // console.log("NODES: ", parent.childNodes);
+    // o/p: NodeList(9) [text, div.day, text, div.day, text, div.day, text, div.day, text]
+
+    // Note:all above check in browser console
+  </script>
+</html>

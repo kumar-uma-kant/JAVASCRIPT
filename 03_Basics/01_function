@@ -1,0 +1,182 @@
+
+function sayMyName(){
+    console.log("U");
+    console.log("M");
+    console.log("A");
+    console.log("K");
+    console.log("A");
+    console.log("N");
+    console.log("T");
+}
+
+//sayMyName()      // "sayMyName" is a reference and "()" is execution
+// sayMyName       // esse koi o/p nhi aayega q ki ye show kr raha hai ki yeh 'reference' hai
+
+
+// ********** addition of two numbers through function ****
+// ++++++++++ method[1] way +++++++++++++++
+ 
+function addTwoNumbers(number1, number2){          // number1,number2 both are called as Parameter
+    console.log(number1 + number2);
+}
+// addTwoNumbers(5, 6)   //function are called here jisme ki 5 & 6 ko 'Arguments' kahte hai
+// console.log(addTwoNumbers(3, 4));
+
+// +++++++++ method[2] another way +++++++++++++++
+
+function addTwoNumbers(number1, number2){
+
+    let result = number1 + number2
+    return result
+    
+}
+
+// const sum = addTwoNumbers(3, 5)  // yaha pe o/p of the function stored in variable 'sum'
+// console.log("Result: ", sum);
+
+// +++++++++++ same function with method[3]: another way +++++
+function addTwoNumbers(number1, number2){
+
+    return number1 + number2
+}
+
+// const result = addTwoNumbers(3, 5)
+
+// console.log("Result: ", result);
+
+//$$$$$ NOTE 1: $$$$$$$$$$
+
+function loginUserMessage(username) {
+    return `${username} just logged in`
+}
+
+// loginUserMessage("Umakant")  //yaha pe function toh execute hua hai,us function ne toh value return kr diya hai but hmne print krne ke liye nhi bola hai ..esliy print nhi hua hai
+
+//  console.log(loginUserMessage("Umakant"));// yaha per hmne print krne k liy bola hai
+
+// console.log(loginUserMessage("")); // empty value
+
+// console.log(loginUserMessage()); // yaha koi value hi nhi pass kr rahe hai...toh return "undefined" aaega ... [ interview]
+
+// 'empty value' and 'koi nhi value' both are different 
+
+//$$$$$ NOTE 2:how to check the 'undefined'$$$$$$$$$$
+
+function loginUserMessage(username){
+    if(username === undefined){
+        console.log("PLease enter a username");
+       
+    }
+    return `${username} just logged in`
+}
+
+// console.log(loginUserMessage("Umakant"));
+// console.log(loginUserMessage());
+
+//$$ NOTE 3:(for dont want to active the line no 70) $$
+function loginUserMessage(username){
+    if(username === undefined){
+        console.log("PLease enter a username");
+       return
+    }
+    return `${username} just logged in`
+}
+// yaha pe 'return(line 80)' active ho jayega jisse ki line 82 work nhi krega
+
+// console.log(loginUserMessage());
+
+//$$$$$ NOTE 4: Professional way for 'False' as (!undefined)
+
+function loginUserMessage(username){
+    if(!username){ // same meaning as (username === undefined)
+        console.log("PLease enter a username");
+       return
+    }
+    return `${username} just logged in`
+}
+
+// console.log(loginUserMessage());
+
+function loginUserMessage(username ="College"){
+    if(!username){ // same meaning as (username === undefined)
+        console.log("PLease enter a username");
+       return
+    }
+    return `${username} just logged in`
+}
+
+// console.log(loginUserMessage()); // jb koi value nhi pass krenge toh default value le lega ...jo ki default value in parameter me "college" hai
+
+// console.log(loginUserMessage("Umakant")); //jb hm koi value de denge toh phir default value nhi print hoga
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// most important for shopping card in project
+// case1:
+
+function calculateCartPrice1(num1){ 
+    return num1
+}
+
+// console.log(calculateCartPrice1(70));
+// console.log(calculateCartPrice1(200, 400, 500, 2000)) // esme sirf first value hi print hogi
+
+// to resolve the above issue ....follow the below steps
+
+function calculateCartPrice2(...num1){ //... is a rest operator
+    return num1
+}
+
+// console.log(calculateCartPrice2(200, 400, 500, 2000))// all o/p will be in arrray
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// for interview question....below
+
+function calculateCartPrice3(val1, val2, ...num1){ //... is a rest operator
+    return num1
+}
+
+// console.log(calculateCartPrice3(200, 400, 950, 100))
+// yaha pe val1=200, val2=>400, ...num1=>rest all values comes inside it
+
+// ******** How to pass an 'object' to the 'function' ****
+
+const myuser = {
+    username: "Umakant Kumar",
+    price: 199
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+
+// handleObject(myuser)
+
+// yaha per hmne 'price' ke jagah 'prices' use krenge toh kya hoga 
+const user = {
+    username: "Umakant",
+    prices: 199          // here 'prices' are used not'price'
+}
+
+function handleObject(anyobject){
+    console.log(`Username is ${anyobject.username} and price is ${anyobject.price}`);
+}
+
+// handleObject(user) //'prices' will  return undefined as o/p
+
+// direct user me hm object ko pas kr ke v access kr sakte hain ..as shown below
+
+handleObject({
+    username: "Tanisha",
+    price: 399
+})
+
+// similarly, we can also pass an array 
+
+const myNewArray = [200, 400, 100, 600]
+
+function returnSecondValue(getArray){
+    return getArray[1] // 'yaha per ewArray' nhi likhna hai dhyan rahe
+}
+
+// console.log(returnSecondValue(myNewArray));
+console.log(returnSecondValue([200, 400, 500, 1000])); // yaha "Array" ko pass kr diy hai

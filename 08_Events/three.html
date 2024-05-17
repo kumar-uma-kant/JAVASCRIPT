@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Rest part of Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    // +++++++++ Points to Remember +++++++++++++++++++
+    /*
+    .......... setInterval()....................
+   Syntax: setInterval(function, milliseconds, param1, param2, ...)
+
+
+  1. The setInterval() method calls a function at specified intervals (in milliseconds).
+
+  2.The setInterval() method continues calling the function until clearInterval() is called, or the window is closed.
+   
+  3. Note: 
+
+      (a). To execute the function only once, use the setTimeout() method instead of it.
+
+       (b).To clear an interval, use the id returned from setInterval():
+          myInterval = setInterval(function, milliseconds);
+Then you can to stop the execution by calling clearInterval():
+         clearInterval(myInterval);
+  
+  
+  */
+    //..........................................
+    // setInterval(function () {
+    //   console.log("Umakant", Date.now()); // esse har 2 second pe function ko call krega ar automatic print krega
+    // }, 2000);
+
+    //..............................................
+    // accessing through separate function
+
+    // const sayDate = function (str) {
+    //   console.log(str, Date.now());
+    // };
+
+    // setInterval(sayDate, 1000, "hi"); // yaha pe hmne 'hi' parameter diya hai jo ab print hogi
+
+    //.........................................
+    // to stop
+    const sayDate = function (str) {
+      console.log(str, Date.now());
+    };
+
+    const intervalId = setInterval(sayDate, 1000, "hi");
+
+    clearInterval(intervalId);
+    //..........................................
+    // Task: jb mai 'start' button pe click kru toh printing start ho jay and jb 'stop' button pr click kru toh stop v ho jay ... discussed as a project in next section
+  </script>
+</html>

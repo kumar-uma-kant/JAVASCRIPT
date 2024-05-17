@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>htnml Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h1>
+      <b><i>Hello to all, here to Dev.Umakant </i></b>
+    </h1>
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            height="235px"
+            id="photoshop"
+            src="umakant.jpg"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img width="200px" id="japan" src="college pic 4.jpg" alt="" />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="river"
+            src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <!-- <li>
+          <img6
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+            onclick="alert('this is for my dear Saket ')"
+          />
+        </li> -->
+        <li>
+          <img
+            width="200px"
+            id="prayer"
+            src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // +++++ another way with javascript ++++++++++
+    // method 1.
+
+    // document.getElementById("owl").onclick = function () {
+    //   alert("owl clicked");
+    // };
+
+    // Note: this 'onclick' bahut km features provide krti hai...more feature k liy 'EventListener' ka use krte hai..shown below
+
+    // method 2.
+
+    // document.getElementById("owl").addEventListener("click", function () {
+    //   alert("owl clicked");
+    // });
+
+    /*
+    document.getElementById("owl").addEventListener("click", function (e) {
+      console.log(e);
+    });
+
+    // note yaha per hmm console me jb jakar owl pic pe click krenge toh hme sara event dikhega 
+*/
+    //method 3:  using  'attachEvent()'  // ye bahut pahle use hota tha ab nhi use hota hai
+    // method 4: jQuery - on    [by using dot on]
+
+    //.............. some events 👇 jisko hme padhna hai
+
+    // type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    /* //..........Use of "true" and "False"....[default value 'false' hota hai].............
+    // Note: Event propagation ka 2 contest hota hai ...ak event public and other is event capturing 
+
+        document.getElementById("images").addEventListener(
+          "click",
+          function (e) {
+            console.log("clicked inside the ul");
+          },
+          true
+        );
+
+        document.getElementById("owl").addEventListener(
+          "click",
+          function (e) {
+            console.log("owl clicked");
+          },
+          true
+        );
+    */
+
+    // Note: means ki agar 'true' use krte hai toh capturing hota hai jo top to bottom work krta hai(outside-inside) and [ 'false' me Bubbling hota hai jop ki moving (inside-outside)] called as 'Event Propagation' ..default value "false" hota hai
+    //........................................................
+
+    //  e.stopPropagation(): esse hamara inner element ka bubbling nhi ho jisse ki uppar n jay hamara bubbling
+
+    // document.getElementById("images").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("clicked inside the ul");
+    //   },
+    //   false
+    // );
+
+    // document.getElementById("owl").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("owl clicked");
+    //     e.stopPropagation();
+    //   },
+    //   false
+    // );
+    // ......... use of [event.preventDefault()] ...........
+
+    // document.getElementById("google").addEventListener(
+    //   "click",
+    //   function (e) {
+    //     console.log("google clicked");
+    //     e.preventDefault(); // esse event ka action stop ho jayega
+    //     e.stopPropagation();
+    //     console.log("maza aaya kya");
+    //   },
+    //   false
+    // );
+
+    // .....................................................
+    // Task: jitne v yaha pe image hai jb hm click kru toh wo sb gayab ho jay
+
+    // document.querySelector("#images").addEventListener(
+    //   "click",
+    //   function (event) {
+    //     // console.log(event); // 'event'lene se sara event browser me dikhega
+    //     // console.log(event.target); //  [event.target].. means ki kis target se ye event occur ho raha hai....(go check inside conole ..its imp part)
+    //     console.log(event.target.parentNode); // esse hme target ki parentnode pata chalta hai...mtlab pura parent aa jayega click krene pe imge ko
+    //   },
+    //   false
+    // );
+
+    // ...............for removuing above things....👇
+    // //method 1;
+    // document.querySelector("#images").addEventListener(
+    //   "click",
+    //   function (event) {
+    //     // console.log(event);
+    //     console.log(event.target.parentNode);
+    //     let removeIt = event.target.parentNode;
+    //     removeIt.remove(); // esse remove ho jayega
+    //   },
+    //   false
+    // );
+
+    // method 2:
+    // document.querySelector("#images").addEventListener(
+    //   "click",41
+    //   function (event) {
+    //     // console.log(event);
+    //     console.log(event.target.parentNode);
+    //     let removeIt = event.target.parentNode;
+    //     removeIt.parentNode.removeChild(removeIt); // esse remove ho jayega
+    //   },
+    //   false
+    // );
+
+    // NOTE: YAHA PER {method 1 & method 2} me HAMNE KYA DEKHA KI JB PARENTNODE {here parentNode=li} pe remove lagate hai toh pura page pe ka sb content remove ho jata hai ... because all are under 'li' ...it will removed all in a single click .... isko solve krne ke liy ..'if-statement' lagate hai
+
+    document.querySelector("#images").addEventListener("click", function (e) {
+      console.log(e.target.tagName); // 'tagName' se pata chalta hai ki actual me wo kya hai jb hm click krte hai toh ...matlab IMG,LI,......etc
+      if (e.target.tagName === "IMG") {
+        // mtlab agar target event ka tagName"IMG' hoga tabhi hm niche ka step jo remove krna hai ..wo active hoga ...other tagName wala remove nhi hoga
+        console.log(e.target.id); // esse event ki target ki 'id' print hoggi
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+      }
+    });
+
+    // just above code se sirf tagName-"IMG" wala hi click krne pe remove hoga ...other rest tagname wla click hoga pr Remove nhi hoga
+  </script>
+</html>

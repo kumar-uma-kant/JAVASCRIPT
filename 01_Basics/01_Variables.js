@@ -9,4 +9,5 @@ prefer not use var because of issue in block scope and functional scope
  */
 let accountstate;
 //variable without values returns 'undefined'in o/p
-console.table([accountId,accountEmail,accountPassword,accountCity,accountstate])
+console.table([accountId, accountEmail, accountPassword, accountCity, accountstate])
+const a = 34;

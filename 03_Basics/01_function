@@ -54,7 +54,7 @@ function loginUserMessage(username) {
 
 //  console.log(loginUserMessage("Umakant"));// yaha per hmne print krne k liy bola hai
 
-// console.log(loginUserMessage("")); // empty value
+// console.log(loginUserMessage("")); // empty value ..o/p: just logged in
 
 // console.log(loginUserMessage()); // yaha koi value hi nhi pass kr rahe hai...toh return "undefined" aaega ... [ interview]
 
@@ -175,7 +175,7 @@ handleObject({
 const myNewArray = [200, 400, 100, 600]
 
 function returnSecondValue(getArray){
-    return getArray[1] // 'yaha per ewArray' nhi likhna hai dhyan rahe
+    return getArray[1] // 'yaha per myNewArray' nhi likhna hai dhyan rahe
 }
 
 // console.log(returnSecondValue(myNewArray));

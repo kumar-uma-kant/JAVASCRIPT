@@ -15,7 +15,7 @@ console.log(gameName[0]); // position at [0] index...but it is not an array
 console.log(gameName.__proto__);
 
 
-console.log(gameName.length);// to know the length of string
+console.log(gameName.length);// to know the  length of string
 console.log(gameName.toUpperCase());//to convert into all in capital alphabet (intervew: ye hamare original string ko change nhi krega ..hamara original Umakant hi rahega q ki Primitive me copy hoTA hai)
 
 console.log(gameName.charAt(2));//to know the character at index [2]
@@ -28,7 +28,7 @@ const anotherString = gameName.slice(-5, 4);// we can put the negative values al
 console.log(anotherString);
 // ***Cocept of 'trim' and 'replace' ****8
 const newStringOne = "   College    "
-console.log(newStringOne); // this will ptint 'college' with including all the spaces
+console.log(newStringOne); // this will print 'college' with including all the spaces
 console.log(newStringOne.trim()); // here use of 'trim' method ..it will remove all the startig & ending spaces
 
 const url = "https://umakant.com/umakat%20kumar"

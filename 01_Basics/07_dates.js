@@ -18,9 +18,9 @@ let myCreatedDate = new Date("2023-01-14") // format : DD/MM/YY
 let myTimeStamp = Date.now() // "TimeStamp" is used, for more exact time ...like used in Quiz,poll
 // console.log(myTimeStamp);
 // console.log(myCreatedDate.getTime());
-// note:"Date.now()" to knpw current date
+// note:"Date.now()" to know current date
 // console.log(Math.floor(Date.now()/1000)); // results in seconds
-
+ 
 // let newDate = new Date()
 // console.log(newDate);
 // console.log(newDate.getMonth() + 1);

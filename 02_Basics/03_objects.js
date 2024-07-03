@@ -1,12 +1,13 @@
 // singleton
-// Object.create
+// Note: way of declaring object is of two types i.e by Literal & by Constructor   ( also only constructor will be "singleton"
+// Object.create      // this is constructor method
 
 // object literals
 
 const mySym = Symbol("key1") // way of declaring the 'symbol'
 
 
-const JsUser = {  //way of declaring the 'object'
+const JsUser = {            //way of declaring the 'object'
     name: "Umakant",
     "full name": "Umakant Kumar",
     [mySym]: "mykey1", // way of accessing the symbol key ..(interview)
@@ -20,6 +21,7 @@ const JsUser = {  //way of declaring the 'object'
 // console.log(JsUser.email) // accessing the object through dot property
 
 // ++++ use of square bracket[]  is good way for special cases (imp for interviews) ++++++++
+
 // console.log(JsUser["email"])// another way of accessing through [] without dot property
 // console.log(JsUser["full name"])
 // console.log(JsUser[mySym])

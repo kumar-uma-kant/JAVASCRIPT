@@ -1,4 +1,4 @@
-// // // let score = "56abc"
+// // let score = "56abc"
 // // // let score=null
 // // // let score = undefined
 // let score = true
@@ -31,6 +31,7 @@
 // let stringNumber = String(someNumber)
 // //console.log(stringNumber);
 // //console.log(typeof stringNumber);
+
 // //**********Operation***********
 
 // let value = 4
@@ -41,6 +42,8 @@
 // // console.log(2*2)
 // // console.log(2**3)
 // // console.log(2%2)
+
+
 // //Addition of string
 
 // let str1 = "Hello"
@@ -55,6 +58,7 @@
 // // all above conclude that -agar string first me hai toh =>sb string ki tarah behave karega and agar string last me hai toh =>string se pahle wala sb simple calculation hoga then string will added with them
 
 //**** special tricky Operation *******
+
 console.log(true);
 console.log(+true);
 console.log(-true);

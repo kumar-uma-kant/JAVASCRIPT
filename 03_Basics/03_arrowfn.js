@@ -49,7 +49,7 @@ const newuser = {
 
 const chai =  () => {
     let username = "Umakant"
-    console.log(this);
+    console.log(this); // o/p will be empty i.e {}
 }
  // note: means we can also use 'this' in the arrow function as line no 52
 
@@ -64,7 +64,7 @@ const chai =  () => {
 
                       // modified is done below
                  
-//Note: jb {} rahega toh "return" keyword rahega,otherwise both will removed
+//Note: jb {} rahega toh "return" keyword rahega,otherwise both will removed and when () used then "return" keyword nhi rahega
 
 // const addTwo = (num1, num2) =>  num1 + num2
 

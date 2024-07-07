@@ -19,10 +19,11 @@ const coding = ["js", "ruby", "java", "python", "cpp"]
 // }
 
 // coding.forEach(printMe) // yaha pe function ka reference dena hai execute nhi krna hai ..q ki print wo khud kr lega
-// ak se jyada parameter ko hm use kr sakte hai
+
+// ak se jyada parameter ko hm use kr sakte hai👇
  
 coding.forEach( (item, index, arr)=> {
-    console.log(item, index, arr);
+    console.log(item, index, arr);  // esse "item, index, arr" sb print hoga
 } )
 
 //...... using with 'object' inside an 'array' .....

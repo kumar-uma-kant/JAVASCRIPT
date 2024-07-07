@@ -59,3 +59,7 @@ Child initialized with name: Alice and age: 10
 ## underscore\_ : defines private property , not gone to use of normal users
 
 ## note: '#' (as new proposal in js) will also used for private purpose
+
+## mostly used as: 👇
+
+note: 1."for-of" used with array 2. " for-in" used with Object

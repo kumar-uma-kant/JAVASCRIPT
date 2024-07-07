@@ -59,4 +59,4 @@ for (const key of map) {
 //     console.log(key, ':-', value);
     
 // }
- 
+ // Note:- yaha pe " for-of" object ke sath work nhi krta hai eske liy hme " for-in" use hota hai object ke sath 

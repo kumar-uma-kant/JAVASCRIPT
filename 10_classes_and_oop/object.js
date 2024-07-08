@@ -20,6 +20,21 @@ createUser.prototype.increment = function () {
     // score++    // esko pta hi nhi hai ki kisko increment krna hai either 25 ko ya 250 ko ....to resolve this issues using ".this" keyword to apply on current context
     this.score++
 }
+// const chai =  createUser("chai", 25) // just run this and observe it
+// const tea = createUser("tea", 250)
+
+// ++++++++++++++++++++++++++++++++++++++++++
+
+function createUser(username, score){
+    this.username = username
+    this.score = score
+}
+
+createUser.prototype.increment = function () {
+    // score++    // esko pta hi nhi hai ki kisko increment krna hai either 25 ko ya 250 ko ....to resolve this issues using ".this" keyword to apply on current context
+    this.score++
+}
+
 createUser.prototype.printMe = function () { 
 //NOTE: console.log(`price is ${score}`); YAha pr kiska score ka price batana hai wo pta hi nhi hai ,esliy use .this keyword👇
 
